@@ -107,6 +107,8 @@ The client library which these utilities use
 (`github.com/hlandau/acme/acmeapi`) can be used independently by any Go code.
 [![GoDoc](https://godoc.org/github.com/hlandau/acme/acmeapi?status.svg)](https://godoc.org/github.com/hlandau/acme/acmeapi)
 
+[Source code.](https://github.com/hlandau/acme)
+
 ## Licence
 
     © 2015 Hugo Landau <hlandau@devever.net>    MIT License

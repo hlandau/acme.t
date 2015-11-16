@@ -1,6 +1,13 @@
 # ACME Client Utilities
 
-**Experimental - Under Development**
+## Getting Started
+
+    $ git clone https://github.com/hlandau/acme.t
+    $ cd acme.t
+    $ make && sudo make install
+    $ sudo acmetool quickstart
+
+## Introduction
 
 - A command line tool for acquiring certificates using a certificate storage
   repository to automatically determine what certificates need to be requested.
@@ -37,15 +44,6 @@
   [Details on the state directory format.](https://github.com/hlandau/acme/blob/master/SCHEMA.md)
 
 - Contains an ACME client library which can be used independently. [![GoDoc](https://godoc.org/github.com/hlandau/acme/acmeapi?status.svg)](https://godoc.org/github.com/hlandau/acme/acmeapi)
-
-
-## TODO
-
-- Currently authorizations must be completed using port 80 or 443, which is not
-  very useful if you're already running a webserver. Possible solutions: Add
-  some way to route /.well-known/acme-challenge requests to a special HTTP
-  server running on a port other than 80, which can be enabled with
-  unremarkable web server configuration directives; add a webroot mode.
 
 ## Licence
 

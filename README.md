@@ -65,6 +65,7 @@ hostnames are satisfied by valid certificates which aren't soon to expire.
 If you run `acmetool reconcile` on a cronjob to facilitate automatic renewal,
 pass `--batch` to ensure it doesn't attempt to interact with a terminal.
 
+<!--
 ## Introduction
 
 - A command line tool for acquiring certificates using a certificate storage
@@ -77,7 +78,7 @@ pass `--batch` to ensure it doesn't attempt to interact with a terminal.
   If successfully acquired, the certificate will be placed in
   `/var/lib/acme/live/example.com/{cert,chain,fullchain,privkey}`.
 
-  Running `acmetool --batch` as root on a cronjob will allow it to
+  Running `acmetool -``-batch` as root on a cronjob will allow it to
   automatically reacquire certificates before they expire. The certificate data
   in `/var/lib/acme/live/example.com` will be updated automatically with the
   new certificate. acmetool can optionally invoke a shell script after having
@@ -100,6 +101,7 @@ pass `--batch` to ensure it doesn't attempt to interact with a terminal.
   and obtains certificates as necessary.
 
   [Details on the state directory format.](https://github.com/hlandau/acme.t/blob/master/doc/SCHEMA.md)
+-->
 
 ## Validation Options
 

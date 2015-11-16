@@ -105,6 +105,8 @@ pass `--batch` to ensure it doesn't attempt to interact with a terminal.
 
 ## Validation Options
 
+<img src="https://i.imgur.com/w8TbgLL.png" align="right" alt="[screenshot]" />
+
 ### Webroot
 
 acmetool can place challenge files in a given directory, allowing your normal

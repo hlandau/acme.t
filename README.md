@@ -1,11 +1,39 @@
 # ACME Client Utilities
 
+acmetool is an easy-to-use command line tool for automatically acquiring
+certificates from ACME servers (such as Let's Encrypt). Designed to flexibly
+integrate into your webserver setup to enable automatic verification. Unlike
+the official Let's Encrypt client, this doesn't modify your web server
+configuration.
+
+You can perform verifications using port 80 or 443 (if you don't yet have a
+server running on one of them); via webroot; by configuring your webserver to
+proxy requests for `/.well-known/acme-challenge/` to a special port which
+acmetool can listen on; or by configuring your webserver not to listen on port
+80, and instead running acmetool's built in HTTPS redirector (and challenge
+responder) on port 80.
+
+You can run acmetool on a cron job to renew certificates automatically.  The
+preferred certificate for a given hostname is always at
+`/var/lib/acme/live/HOSTNAME/{cert,chain,fullchain,privkey}`. You can configure
+acmetool to reload your webserver automatically when it renews a certificate.
+
+acmetool is intended to be "magic-free". All of acmetool's state is stored in a
+simple, comprehensible directory of flat files. [The schema for this directory
+is documented.](https://github.com/hlandau/acme.t/blob/master/SCHEMA.md)
+
+acmetool is intended to work like "make". The state directory expresses target
+domain names, and whenever acmetool is invoked, it ensures that valid
+certificates are available to meet those names. Certificates which will expire
+soon are renewed. acmetool is thus idempotent and minimises the use of state.
+
 ## Getting Started
 
     $ git clone https://github.com/hlandau/acme.t
     $ cd acme.t
     $ make && sudo make install
     $ sudo acmetool quickstart
+    $ sudo acmetool want example.com www.example.com
 
 ## Introduction
 

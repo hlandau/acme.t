@@ -26,6 +26,10 @@ http {
 }
 ```
 
+Note that the configuration will need to be repeated for each vhost. You may
+wish to avoid duplication by placing the applicable configuration in a separate
+file and including it in each vhost.
+
 ### Apache httpd
 
 ```apache

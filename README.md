@@ -51,6 +51,7 @@ $ sudo acmetool want example.com www.example.com
 $ ls -l /var/lib/acme/live/example.com/
 
 # Renew certificates automatically:
+# Change '42' to a random integer in [0,59] to distribute the load on the server.
 $ sudo /bin/sh -c "echo '42 0 * * * root /usr/local/bin/acmetool --batch' > /etc/cron.d/acmetool"
 ```
 

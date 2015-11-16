@@ -8,7 +8,7 @@ configuration.
 
 You can perform verifications using port 80 or 443 (if you don't yet have a
 server running on one of them); via webroot; by configuring your webserver to
-proxy requests for `/.well-known/acme-challenge/` to a special port which
+proxy requests for `/.well-known/acme-challenge/` to a special port (402) which
 acmetool can listen on; or by configuring your webserver not to listen on port
 80, and instead running acmetool's built in HTTPS redirector (and challenge
 responder) on port 80.
@@ -28,6 +28,8 @@ certificates are available to meet those names. Certificates which will expire
 soon are renewed. acmetool is thus idempotent and minimises the use of state.
 
 ## Getting Started
+
+You will need Go installed.
 
     $ git clone https://github.com/hlandau/acme.t
     $ cd acme.t

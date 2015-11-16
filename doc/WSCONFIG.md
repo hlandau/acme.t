@@ -42,8 +42,8 @@ Ensure you load the modules `mod_proxy` and `mod_proxy_http`.
 
 Using nginx/tengine with acmetool in webroot mode shouldn't ordinarily need any
 special webserver configuration if you specify
-WEBROOT/.well-known/acme-challenge as the path, where WEBROOT is your webroot
-(e.g. /var/www, /srv/http). But if you want to store challenges in a different
+`WEBROOT/.well-known/acme-challenge` as the path, where `WEBROOT` is your webroot
+(e.g. `/var/www`, `/srv/http`). But if you want to store challenges in a different
 directory, you'll need to configure an alias.
 
 If you want to store challenges in a different directory, the directory

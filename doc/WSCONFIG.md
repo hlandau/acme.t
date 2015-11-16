@@ -2,7 +2,7 @@
 
 ## Redirector Mode
 
-No configuration required.
+No configuration required, but ensure that your web server is not listening on port 80 and that the redirector service (`acmetool redirector`) is started.
 
 ## Proxy Mode
 

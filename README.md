@@ -32,24 +32,26 @@ soon are renewed. acmetool is thus idempotent and minimises the use of state.
 
 You will need Go installed.
 
-    $ git clone https://github.com/hlandau/acme.t
-    $ cd acme.t
-    $ make && sudo make install
+```bash
+$ git clone https://github.com/hlandau/acme.t
+$ cd acme.t
+$ make && sudo make install
 
-    # Run the quickstart wizard.
-    $ sudo acmetool quickstart
+# Run the quickstart wizard.
+$ sudo acmetool quickstart
 
-    # Configure your webserver to serve challenges if necessary.
-    $ ...
+# Configure your webserver to serve challenges if necessary.
+$ ...
 
-    # Request the hostnames you want:
-    $ sudo acmetool want example.com www.example.com
+# Request the hostnames you want:
+$ sudo acmetool want example.com www.example.com
 
-    # Now you have certificates:
-    $ ls -l /var/lib/acme/live/example.com/
+# Now you have certificates:
+$ ls -l /var/lib/acme/live/example.com/
 
-    # Renew certificates automatically:
-    $ sudo /bin/sh -c "echo '42 0 * * * root /usr/local/bin/acmetool --batch' > /etc/cron.d/acmetool"
+# Renew certificates automatically:
+$ sudo /bin/sh -c "echo '42 0 * * * root /usr/local/bin/acmetool --batch' > /etc/cron.d/acmetool"
+```
 
 The `quickstart` subcommand is a recommended wizard which guides you through the
 setup of ACME on your system.

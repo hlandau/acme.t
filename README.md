@@ -11,9 +11,10 @@ server running on one of them); via webroot; by configuring your webserver to
 proxy requests for `/.well-known/acme-challenge/` to a special port (402) which
 acmetool can listen on; or by configuring your webserver not to listen on port
 80, and instead running acmetool's built in HTTPS redirector (and challenge
-responder) on port 80.
+responder) on port 80. This is useful if all you want to do with port 80 is
+redirect people to port 443.
 
-You can run acmetool on a cron job to renew certificates automatically.  The
+You can run acmetool on a cron job to renew certificates automatically (`acmetool --batch`).  The
 preferred certificate for a given hostname is always at
 `/var/lib/acme/live/HOSTNAME/{cert,chain,fullchain,privkey}`. You can configure
 acmetool to reload your webserver automatically when it renews a certificate.
@@ -34,8 +35,35 @@ You will need Go installed.
     $ git clone https://github.com/hlandau/acme.t
     $ cd acme.t
     $ make && sudo make install
+
+    # Run the quickstart wizard.
     $ sudo acmetool quickstart
+
+    # Configure your webserver to serve challenges if necessary.
+    $ ...
+
+    # Request the hostnames you want:
     $ sudo acmetool want example.com www.example.com
+
+    # Now you have certificates:
+    $ ls -l /var/lib/acme/live/example.com/
+
+    # Renew certificates automatically:
+    $ sudo /bin/sh -c "echo '42 0 * * * root /usr/local/bin/acmetool --batch' > /etc/cron.d/acmetool"
+
+The `quickstart` subcommand is a recommended wizard which guides you through the
+setup of ACME on your system.
+
+The `want` subcommand states that you want a certificate for the given hostnames.
+(If you want separate certificates for each of the hostnames, run the want
+subcommand separately for each hostname.)
+
+The default subcommand, `reconcile`, is like "make" and makes sure all desired
+hostnames are satisfied by valid certificates which aren't soon to expire.
+`want` calls `reconcile` automatically.
+
+If you run `acmetool reconcile` on a cronjob to facilitate automatic renewal,
+pass `--batch` to ensure it doesn't attempt to interact with a terminal.
 
 ## Introduction
 
@@ -71,9 +99,13 @@ You will need Go installed.
   each invocation, ACME figures out which certificates satisfy which targets
   and obtains certificates as necessary.
 
-  [Details on the state directory format.](https://github.com/hlandau/acme/blob/master/SCHEMA.md)
+  [Details on the state directory format.](https://github.com/hlandau/acme.t/blob/master/doc/SCHEMA.md)
 
-- Contains an ACME client library which can be used independently. [![GoDoc](https://godoc.org/github.com/hlandau/acme/acmeapi?status.svg)](https://godoc.org/github.com/hlandau/acme/acmeapi)
+## Library
+
+The client library which these utilities use
+(`github.com/hlandau/acme/acmeapi`) can be used independently by any Go code.
+[![GoDoc](https://godoc.org/github.com/hlandau/acme/acmeapi?status.svg)](https://godoc.org/github.com/hlandau/acme/acmeapi)
 
 ## Licence
 

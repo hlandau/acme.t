@@ -41,7 +41,8 @@ $ make && sudo make install
 $ sudo acmetool quickstart
 
 # Configure your webserver to serve challenges if necessary.
-$ [(webserver configuration HOWTO)](https://github.com/hlandau/acme.t/blob/master/doc/WSCONFIG.md)
+# See https://github.com/hlandau/acme.t/blob/master/doc/WSCONFIG.md
+$ ...
 
 # Request the hostnames you want:
 $ sudo acmetool want example.com www.example.com

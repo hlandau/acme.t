@@ -37,7 +37,7 @@ $ git clone https://github.com/hlandau/acme.t
 $ cd acme.t
 $ make && sudo make install
 
-# Run the quickstart wizard.
+# Run the quickstart wizard. Sets up account, cronjob, etc.
 $ sudo acmetool quickstart
 
 # Configure your webserver to serve challenges if necessary.
@@ -49,11 +49,11 @@ $ sudo acmetool want example.com www.example.com
 
 # Now you have certificates:
 $ ls -l /var/lib/acme/live/example.com/
-
-# Renew certificates automatically:
-# Change '42' to a random integer in [0,59] to distribute the load on the server.
-$ sudo /bin/sh -c "echo '42 0 * * * root /usr/local/bin/acmetool --batch' > /etc/cron.d/acmetool"
 ```
+
+<!-- # Renew certificates automatically:
+# Change '42' to a random integer in [0,59] to distribute the load on the server.
+$ sudo /bin/sh -c "echo '42 0 * * * root /usr/local/bin/acmetool -batch' > /etc/cron.d/acmetool" -->
 
 The `quickstart` subcommand is a recommended wizard which guides you through the
 setup of ACME on your system.

@@ -21,7 +21,7 @@ acmetool to reload your webserver automatically when it renews a certificate.
 
 acmetool is intended to be "magic-free". All of acmetool's state is stored in a
 simple, comprehensible directory of flat files. [The schema for this directory
-is documented.](https://github.com/hlandau/acme.t/blob/master/SCHEMA.md)
+is documented.](https://github.com/hlandau/acme.t/blob/master/doc/SCHEMA.md)
 
 acmetool is intended to work like "make". The state directory expresses target
 domain names, and whenever acmetool is invoked, it ensures that valid

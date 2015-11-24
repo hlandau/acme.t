@@ -318,13 +318,14 @@ Each object invoked MUST have the following command line arguments passed:
 
   - The first command line argument shall be the string "live-updated".
 
-  - The second command line argument shall be the name of the symlink in the
-    "live" directory which has changed its target, i.e. the hostname the
-    preferred certificate of which has changed.
-
 The following environment variable MUST be set for the purposes of the invocation:
 
   - "ACME\_STATE\_DIR" shall be set to the absolute path of the State Directory.
+
+Each object invoked MUST have passed to stdin a list of the names of the
+symlinks in the "live" directory which have changed target, i.e. the hostnames
+for which the preferred certificate has changed. The hostnames are separated by
+newlines, and the final hostname also ends with a newline.
 
 SRV-ID
 ------

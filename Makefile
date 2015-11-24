@@ -36,7 +36,7 @@ BUILDINFO=$(shell (echo built `date -u "+%Y%m%d%H%M%S"` on `hostname -f`; go lis
 BUILDINFO_FLAG=
 
 ifeq ($(USE_BUILDINFO),1)
-	BUILDINFO_FLAG= -ldflags "-X github.com/hlandau/degoutils/buildinfo.RawBuildInfo $(call BUILDINFO,$(1))"
+	BUILDINFO_FLAG= -ldflags "-X github.com/hlandau/degoutils/buildinfo.RawBuildInfo=$(call BUILDINFO,$(1))"
 endif
 
 ## Standard Rules

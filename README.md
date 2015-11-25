@@ -153,6 +153,62 @@ The client library which these utilities use
 
 [Source code.](https://github.com/hlandau/acme)
 
+## Comparison with...
+
+### Let's Encrypt Official Client
+
+A heavyweight Python implementation which is a bit too “magic” for my tastes.
+Tries to mutate your webserver configuration automatically.
+
+acmetool is a single-file binary which only depends on basic system libraries
+(on Linux, these are libc, libpthread, libcap, libattr). It doesn't do anything
+to your webserver; it just places certificates at a standard location and can
+also reload your webserver (whichever webserver it is) by executing hook shell
+scripts.
+
+acmetool isn't based around individual transactions for obtaining certificates;
+it's about satisfying expressed requirements by any means necessary. Its
+comprehensible, magic-free state directory makes it as stateless and idempotent
+as possible.
+
+### lego
+
+Like acmetool, [xenolf/lego](https://github.com/xenolf/lego) provides a library
+and client utility. The utility provides commands for creating certificates,
+but doesn't provide a compelling system for managing the lifetime of the
+short-lived certificates offered by *Let's Encrypt*. The user is expected to
+generate and install all certificates manually.
+
+### gethttpsforfree
+
+[diafygi/gethttpsforfree](https://github.com/diafygi/gethttpsforfree) provides
+an HTML file which uses JavaScript to make requests to an ACME server and
+obtain certificates. It's a functional user interface, but like lego it
+provides no answer for the automation issue, and is thus impractical given the
+short lifetime of certificates issued by Let's Encrypt.
+
+### Comparison, list of client implementations
+
+<table>
+<tr><td></td><th>acmetool</th><th>letsencrypt</th><th>lego</th><th>gethttpsforfree</th></tr>
+<tr><td>Automatic renewal</td><td>Yes</td><td>Not yet</td><td>No</td><td>No</td></tr>
+<tr><td>State management</td><td>Yes</td><td>Yes</td><td>—</td><td>—</td></tr>
+<tr><td>Single-file binary</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Quickstart wizard</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+<tr><td>Modifies webserver config</td><td>No</td><td>By default</td><td>No</td><td>No</td></tr>
+<tr><td>Supports Apache</td><td>Yes</td><td>Yes</td><td>—</td><td>—</td></tr>
+<tr><td>Supports nginx</td><td>Yes</td><td>Experimental</td><td>—</td><td>—</td></tr>
+<tr><td>Supports HAProxy</td><td>Yes</td><td>No</td><td>—</td><td>—</td></tr>
+<tr><td>Supports any web server</td><td>Yes</td><td>Webroot\*</td><td>—</td><td>—</td></tr>
+</table>
+
+acmetool has a different philosophy to state management and configuration to
+the Let's Encrypt client; see the beginning of this README.
+
+\* The webroot method does not appear to provide any means of reloading the
+webserver once the certificate has been changed, which means auto-renewal
+requires manual intervention.
+
 ## Licence
 
     © 2015 Hugo Landau <hlandau@devever.net>    MIT License

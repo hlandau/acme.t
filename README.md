@@ -203,6 +203,7 @@ short lifetime of certificates issued by Let's Encrypt.
 <tr><td>Authorization via webroot</td><td>Yes</td><td>Yes</td><td>—</td><td>Manual</td></tr>
 <tr><td>Authorization via port 80 redirector</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
 <tr><td>Authorization via proxy</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+<tr><td>Authorization via listener§</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
 </table>
 
 † acmetool has a different philosophy to state management and configuration to
@@ -211,6 +212,8 @@ the Let's Encrypt client; see the beginning of this README.
 ‡ The webroot method does not appear to provide any means of reloading the
 webserver once the certificate has been changed, which means auto-renewal
 requires manual intervention.
+
+§ Requires downtime.
 
 ## Licence
 

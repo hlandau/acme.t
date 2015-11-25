@@ -200,6 +200,9 @@ short lifetime of certificates issued by Let's Encrypt.
 <tr><td>Supports nginx</td><td>Yes</td><td>Experimental</td><td>—</td><td>—</td></tr>
 <tr><td>Supports HAProxy</td><td>Yes</td><td>No</td><td>—</td><td>—</td></tr>
 <tr><td>Supports any web server</td><td>Yes</td><td>Webroot‡</td><td>—</td><td>—</td></tr>
+<tr><td>Authorization via webroot</td><td>Yes</td><td>Yes</td><td>—</td><td>Manual</td></tr>
+<tr><td>Authorization via port 80 redirector</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+<tr><td>Authorization via proxy</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
 </table>
 
 † acmetool has a different philosophy to state management and configuration to

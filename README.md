@@ -186,7 +186,7 @@ short lifetime of certificates issued by Let's Encrypt.
 ### Comparison, list of client implementations
 
 <table>
-<tr><td></td><th>acmetool</th><th>letsencrypt</th><th>lego</th><th>gethttpsforfree</th></tr>
+<tr><td></td><th>acmetool</th><th>[letsencrypt](https://github.com/letsencrypt/letsencrypt)</th><th>[lego](https://github.com/xenolf/lego)</th><th>[gethttpsforfree](https://github.com/diafygi/gethttpsforfree)</th></tr>
 <tr><td>Automatic renewal</td><td>Yes</td><td>Not yet</td><td>No</td><td>No</td></tr>
 <tr><td>State management</td><td>Yes†</td><td>Yes</td><td>—</td><td>—</td></tr>
 <tr><td>Single-file binary</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>

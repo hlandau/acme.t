@@ -111,26 +111,20 @@ pass `--batch` to ensure it doesn't attempt to interact with a terminal.
 
 <img src="https://i.imgur.com/w8TbgLL.png" align="right" alt="[screenshot]" />
 
-### Webroot
-
-acmetool can place challenge files in a given directory, allowing your normal
+**Webroot:** acmetool can place challenge files in a given directory, allowing your normal
 web server to serve them. The files must be served from the path you specify at
 `/.well-known/acme-challenge/`.
 
 [Information on configuring your web server.](https://github.com/hlandau/acme.t/blob/master/doc/WSCONFIG.md)
 
-### Proxy
-
-acmetool can respond to validation challenges by serving them on port 402. In
+**Proxy:** acmetool can respond to validation challenges by serving them on port 402. In
 order for this to be useful, you must configure your webserver to proxy
 requests under `/.well-known/acme-challenge/` to
 `http://127.0.0.1:402/.well-known/acme-challenge`.
 
 [Information on configuring your web server.](https://github.com/hlandau/acme.t/blob/master/doc/WSCONFIG.md)
 
-### Redirector
-
-`acmetool redirector` starts an HTTP server on port 80 which redirects all
+**Redirector:** `acmetool redirector` starts an HTTP server on port 80 which redirects all
 requests to HTTPS, as well as serving any necessary validation responses. The
 `acmetool quickstart` wizard can set it up for you if you use systemd.
 Otherwise, you'll need to configure your system to run `acmetool redirector
@@ -139,9 +133,7 @@ the username you want the daemon to drop to.
 
 Make sure your web server is not listening on port 80.
 
-### Listen
-
-If you are for some reason not running anything on port 80 or 443, acmetool
+**Listen:** If you are for some reason not running anything on port 80 or 443, acmetool
 will use those ports. Either port being available is sufficient. This is only
 really useful for development purposes.
 

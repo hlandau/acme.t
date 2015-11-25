@@ -155,10 +155,9 @@ The client library which these utilities use
 
 ## Comparison with...
 
-### Let's Encrypt Official Client
-
-A heavyweight Python implementation which is a bit too “magic” for my tastes.
-Tries to mutate your webserver configuration automatically.
+**Let's Encrypt Official Client:** A heavyweight Python implementation which is
+a bit too “magic” for my tastes. Tries to mutate your webserver configuration
+automatically.
 
 acmetool is a single-file binary which only depends on basic system libraries
 (on Linux, these are libc, libpthread, libcap, libattr). It doesn't do anything
@@ -171,16 +170,13 @@ it's about satisfying expressed requirements by any means necessary. Its
 comprehensible, magic-free state directory makes it as stateless and idempotent
 as possible.
 
-### lego
+**lego:** Like acmetool, [xenolf/lego](https://github.com/xenolf/lego) provides
+a library and client utility. The utility provides commands for creating
+certificates, but doesn't provide a compelling system for managing the lifetime
+of the short-lived certificates offered by Let's Encrypt. The user is expected
+to generate and install all certificates manually.
 
-Like acmetool, [xenolf/lego](https://github.com/xenolf/lego) provides a library
-and client utility. The utility provides commands for creating certificates,
-but doesn't provide a compelling system for managing the lifetime of the
-short-lived certificates offered by Let's Encrypt. The user is expected to
-generate and install all certificates manually.
-
-### gethttpsforfree
-
+**gethttpsforfree:**
 [diafygi/gethttpsforfree](https://github.com/diafygi/gethttpsforfree) provides
 an HTML file which uses JavaScript to make requests to an ACME server and
 obtain certificates. It's a functional user interface, but like lego it

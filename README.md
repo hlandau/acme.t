@@ -176,7 +176,7 @@ as possible.
 Like acmetool, [xenolf/lego](https://github.com/xenolf/lego) provides a library
 and client utility. The utility provides commands for creating certificates,
 but doesn't provide a compelling system for managing the lifetime of the
-short-lived certificates offered by *Let's Encrypt*. The user is expected to
+short-lived certificates offered by Let's Encrypt. The user is expected to
 generate and install all certificates manually.
 
 ### gethttpsforfree
@@ -192,20 +192,20 @@ short lifetime of certificates issued by Let's Encrypt.
 <table>
 <tr><td></td><th>acmetool</th><th>letsencrypt</th><th>lego</th><th>gethttpsforfree</th></tr>
 <tr><td>Automatic renewal</td><td>Yes</td><td>Not yet</td><td>No</td><td>No</td></tr>
-<tr><td>State management</td><td>Yes</td><td>Yes</td><td>—</td><td>—</td></tr>
+<tr><td>State management</td><td>Yes†</td><td>Yes</td><td>—</td><td>—</td></tr>
 <tr><td>Single-file binary</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Quickstart wizard</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
 <tr><td>Modifies webserver config</td><td>No</td><td>By default</td><td>No</td><td>No</td></tr>
 <tr><td>Supports Apache</td><td>Yes</td><td>Yes</td><td>—</td><td>—</td></tr>
 <tr><td>Supports nginx</td><td>Yes</td><td>Experimental</td><td>—</td><td>—</td></tr>
 <tr><td>Supports HAProxy</td><td>Yes</td><td>No</td><td>—</td><td>—</td></tr>
-<tr><td>Supports any web server</td><td>Yes</td><td>Webroot\*</td><td>—</td><td>—</td></tr>
+<tr><td>Supports any web server</td><td>Yes</td><td>Webroot‡</td><td>—</td><td>—</td></tr>
 </table>
 
-acmetool has a different philosophy to state management and configuration to
+† acmetool has a different philosophy to state management and configuration to
 the Let's Encrypt client; see the beginning of this README.
 
-\* The webroot method does not appear to provide any means of reloading the
+‡ The webroot method does not appear to provide any means of reloading the
 webserver once the certificate has been changed, which means auto-renewal
 requires manual intervention.
 

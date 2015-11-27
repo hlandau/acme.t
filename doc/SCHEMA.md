@@ -379,7 +379,7 @@ determine what targets are unsatisfied by currently available certificates.
 
 A target is satisfied by a certificate if the hostnames required by the target
 are a subset of the hostnames for which the certificate is valid; if the
-certificate is not expired nor is near expiry; and if the private key for the
+certificate is neither expired nor near expiry; and if the private key for the
 certificate is available within the State Directory.
 
 The meaning of “near expiry” is implementation-dependent. The RECOMMENDED

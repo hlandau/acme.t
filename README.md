@@ -1,4 +1,4 @@
-# ACME Client Utilities
+# ACME Client Utilities [![Build Status](https://travis-ci.org/hlandau/acme.svg?branch=master)](https://travis-ci.org/hlandau/acme)
 
 acmetool is an easy-to-use command line tool for automatically acquiring
 certificates from ACME servers (such as Let's Encrypt). Designed to flexibly

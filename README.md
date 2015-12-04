@@ -32,6 +32,10 @@ soon are renewed. acmetool is thus idempotent and minimises the use of state.
 
 You will need Go installed.
 
+If you are on Linux, you will need to make sure the development files for
+`libcap` are installed. This is probably a package for your distro called
+`libcap-dev` or `libcap-devel` or similar.
+
 ```bash
 $ git clone https://github.com/hlandau/acme.t
 $ cd acme.t

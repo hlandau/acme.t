@@ -327,6 +327,20 @@ symlinks in the "live" directory which have changed target, i.e. the hostnames
 for which the preferred certificate has changed. The hostnames are separated by
 newlines, and the final hostname also ends with a newline.
 
+It may be desirable for an implementation to run as an unprivileged user. In this case,
+it is necessary to have some way to elevate notification hooks so they can restart
+system services. Since most POSIX systems do not support the setuid bit on scripts,
+the use of "sudo" is suggested. The protocol is as follows.
+
+When an implementation is not running as root, and is executing a notification
+hook, and that hook is owned by root, and it has the setuid bit set, and the OS
+does not (as currently configured) support setuid on scripts, and the "sudo"
+command is available, and the file begins with the characters "#!", execute
+"sudo -n -- FILE ARGS...", where FILE is the absolute path to the file and ARGS
+are dictated by the notification protocol. Success is not guaranteed as the
+system administrator must have configured the sudoers file to allow this
+operation.
+
 SRV-ID
 ------
 

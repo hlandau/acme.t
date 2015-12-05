@@ -30,6 +30,8 @@ soon are renewed. acmetool is thus idempotent and minimises the use of state.
 
 ## Getting Started
 
+[**Binary releases are also available.**](https://github.com/hlandau/acme/releases)
+
 You will need Go installed.
 
 If you are on Linux, you will need to make sure the development files for

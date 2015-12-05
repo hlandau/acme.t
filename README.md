@@ -190,6 +190,7 @@ short lifetime of certificates issued by Let's Encrypt.
 <tr><td>Single-file binary</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Quickstart wizard</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
 <tr><td>Modifies webserver config</td><td>No</td><td>By default</td><td>No</td><td>No</td></tr>
+<tr><td>Non-root support</td><td>Optional</td><td>No</td><td>No</td><td>No</td></tr>
 <tr><td>Supports Apache</td><td>Yes</td><td>Yes</td><td>—</td><td>—</td></tr>
 <tr><td>Supports nginx</td><td>Yes</td><td>Experimental</td><td>—</td><td>—</td></tr>
 <tr><td>Supports HAProxy</td><td>Yes</td><td>No</td><td>—</td><td>—</td></tr>
@@ -208,6 +209,10 @@ webserver once the certificate has been changed, which means auto-renewal
 requires manual intervention.
 
 § Requires downtime.
+
+This table is maintained in good faith; I believe the above comparison to be
+accurate. If there are any inaccuracies, I will rectify the table and publish a
+notice of correction here.
 
 ## Licence
 

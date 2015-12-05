@@ -28,6 +28,8 @@ domain names, and whenever acmetool is invoked, it ensures that valid
 certificates are available to meet those names. Certificates which will expire
 soon are renewed. acmetool is thus idempotent and minimises the use of state.
 
+acmetool can optionally be used [without running it as root.](https://github.com/hlandau/acme.t/blob/master/doc/NOROOT.md)
+
 ## Getting Started
 
 [**Binary releases are also available.**](https://github.com/hlandau/acme/releases)
@@ -190,7 +192,7 @@ short lifetime of certificates issued by Let's Encrypt.
 <tr><td>Single-file binary</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Quickstart wizard</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
 <tr><td>Modifies webserver config</td><td>No</td><td>By default</td><td>No</td><td>No</td></tr>
-<tr><td>Non-root support</td><td>Optional</td><td>No</td><td>No</td><td>No</td></tr>
+<tr><td>Non-root support</td><td>[Optional](https://github.com/hlandau/acme.t/blob/master/doc/NOROOT.md)</td><td>No</td><td>No</td><td>No</td></tr>
 <tr><td>Supports Apache</td><td>Yes</td><td>Yes</td><td>—</td><td>—</td></tr>
 <tr><td>Supports nginx</td><td>Yes</td><td>Experimental</td><td>—</td><td>—</td></tr>
 <tr><td>Supports HAProxy</td><td>Yes</td><td>No</td><td>—</td><td>—</td></tr>
@@ -211,8 +213,8 @@ requires manual intervention.
 § Requires downtime.
 
 This table is maintained in good faith; I believe the above comparison to be
-accurate. If there are any inaccuracies, I will rectify the table and publish a
-notice of correction here.
+accurate. If notified of any inaccuracies, I will rectify the table and publish
+a notice of correction here.
 
 ## Licence
 

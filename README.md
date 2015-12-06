@@ -28,7 +28,10 @@ domain names, and whenever acmetool is invoked, it ensures that valid
 certificates are available to meet those names. Certificates which will expire
 soon are renewed. acmetool is thus idempotent and minimises the use of state.
 
-acmetool can optionally be used [without running it as root.](https://github.com/hlandau/acme.t/blob/master/doc/NOROOT.md)
+acmetool can optionally be used [without running it as
+root.](https://github.com/hlandau/acme.t/blob/master/doc/NOROOT.md) If you have
+existing certificates issued using the official client, acmetool can import
+those certificates, keys and account keys (`acmetool import-le`).
 
 ## Getting Started
 
@@ -201,6 +204,7 @@ short lifetime of certificates issued by Let's Encrypt.
 <tr><td>Authorization via port 80 redirector</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
 <tr><td>Authorization via proxy</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
 <tr><td>Authorization via listener§</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+<tr><td>Import state from official client</td><td>Yes</td><td>—</td><td>—</td><td>—</td></tr>
 </table>
 
 † acmetool has a different philosophy to state management and configuration to

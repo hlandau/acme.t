@@ -35,36 +35,11 @@ those certificates, keys and account keys (`acmetool import-le`).
 
 ## Getting Started
 
-[**Binary releases are also available.**](https://github.com/hlandau/acme/releases)
+[Binary releases.](https://github.com/hlandau/acme/releases)
 
-You will need Go installed.
+[Installation from source.](https://github.com/hlandau/acme#getting-started)
 
-If you are on Linux, you will need to make sure the development files for
-`libcap` are installed. This is probably a package for your distro called
-`libcap-dev` or `libcap-devel` or similar.
-
-```bash
-$ git clone https://github.com/hlandau/acme
-$ cd acme
-$ make && sudo make install
-
-# Run the quickstart wizard. Sets up account, cronjob, etc.
-$ sudo acmetool quickstart
-
-# Configure your webserver to serve challenges if necessary.
-# See https://github.com/hlandau/acme/blob/master/_doc/WSCONFIG.md
-$ ...
-
-# Request the hostnames you want:
-$ sudo acmetool want example.com www.example.com
-
-# Now you have certificates:
-$ ls -l /var/lib/acme/live/example.com/
-```
-
-<!-- # Renew certificates automatically:
-# Change '42' to a random integer in [0,59] to distribute the load on the server.
-$ sudo /bin/sh -c "echo '42 0 * * * root /usr/local/bin/acmetool -batch' > /etc/cron.d/acmetool" -->
+[Getting started guide.](https://github.com/hlandau/acme#getting-started)
 
 The `quickstart` subcommand is a recommended wizard which guides you through the
 setup of ACME on your system.
